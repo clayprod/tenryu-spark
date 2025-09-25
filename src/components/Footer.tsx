@@ -1,0 +1,136 @@
+import { Heart, ExternalLink } from "lucide-react";
+import tenryuLogo from "@/assets/tenryu-logo.png";
+
+const Footer = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const quickLinks = [
+    { label: "Início", id: "home" },
+    { label: "Quem Somos", id: "sobre" },
+    { label: "Clientes", id: "clientes" },
+    { label: "Produtos", id: "produtos" },
+    { label: "Serviços", id: "servicos" },
+    { label: "Contato", id: "contato" }
+  ];
+
+  const services = [
+    "Pesquisa de Mercado",
+    "Análise de Viabilidade", 
+    "Engenharia de Produtos",
+    "Marketing",
+    "Assessoria de Importação",
+    "Gestão de Portfólio"
+  ];
+
+  return (
+    <footer className="bg-gradient-hero text-white">
+      <div className="container-tenryu">
+        {/* Main Footer Content */}
+        <div className="py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Company Info */}
+            <div className="lg:col-span-2">
+              <div className="flex items-center gap-3 mb-6">
+                <img 
+                  src={tenryuLogo} 
+                  alt="Tenryu Consulting" 
+                  className="h-12 w-auto"
+                />
+                <div>
+                  <h3 className="text-xl font-bold">TENRYU</h3>
+                  <p className="text-primary">CONSULTING</p>
+                </div>
+              </div>
+              
+              <p className="text-gray-300 mb-6 max-w-md leading-relaxed">
+                Consultoria especializada em desenvolvimento de negócios e importação. 
+                Transformamos visões em negócios reais com expertise internacional 
+                e visão holística.
+              </p>
+              
+              <div className="space-y-2">
+                <p className="flex items-center gap-2">
+                  <span className="font-medium">Telefone:</span>
+                  <span className="text-gray-300">(11) 94190-1424</span>
+                </p>
+                <p className="flex items-center gap-2">
+                  <span className="font-medium">E-mail:</span>
+                  <span className="text-gray-300">clayton@tenryu.com.br</span>
+                </p>
+                <p className="flex items-center gap-2">
+                  <span className="font-medium">Site:</span>
+                  <span className="text-gray-300">tenryu.com.br</span>
+                </p>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-semibold mb-6">Navegação</h4>
+              <ul className="space-y-3">
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
+                    <button
+                      onClick={() => scrollToSection(link.id)}
+                      className="text-gray-300 hover:text-primary transition-colors text-left"
+                    >
+                      {link.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h4 className="text-lg font-semibold mb-6">Serviços</h4>
+              <ul className="space-y-3">
+                {services.map((service, index) => (
+                  <li key={index} className="text-gray-300 text-sm">
+                    {service}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Footer */}
+        <div className="py-6 border-t border-white/20">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-gray-300 text-sm text-center md:text-left">
+              © 2024 Tenryu Consulting. Todos os direitos reservados.
+            </div>
+            
+            <div className="flex items-center gap-4 text-sm">
+              <span className="text-gray-400">Créditos de design:</span>
+              <a 
+                href="/creditos" 
+                className="text-gray-300 hover:text-primary transition-colors flex items-center gap-1"
+              >
+                Slidesgo, Flaticon & Freepik
+                <ExternalLink size={12} />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Made with Love */}
+        <div className="py-4 border-t border-white/10">
+          <div className="text-center">
+            <p className="text-gray-400 text-sm flex items-center justify-center gap-2">
+              Feito com <Heart size={16} className="text-primary" /> para transformar sonhos em realidade
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
