@@ -52,7 +52,7 @@ const Contato = () => {
       <div className="container-tenryu relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground font-exo">
             Vamos Colocar <span className="text-primary">Sonhos</span> em 
             <br className="hidden sm:block" />
             Prática <span className="text-primary">Juntos?</span>
@@ -70,7 +70,7 @@ const Contato = () => {
             <div className="card-tenryu">
               <div className="flex items-center gap-3 mb-6">
                 <Calendar className="w-6 h-6 text-primary" />
-                <h3 className="text-xl font-bold text-foreground">
+                <h3 className="text-xl font-bold text-foreground font-exo">
                   Agende uma Reunião
                 </h3>
               </div>
@@ -102,7 +102,7 @@ const Contato = () => {
 
             {/* Contact Details */}
             <div className="card-tenryu">
-              <h3 className="text-xl font-bold text-foreground mb-6">
+              <h3 className="text-xl font-bold text-foreground mb-6 font-exo">
                 Outras Formas de Contato
               </h3>
               
@@ -152,7 +152,7 @@ const Contato = () => {
 
           {/* Contact Form */}
           <div className="card-tenryu">
-            <h3 className="text-xl font-bold text-foreground mb-6">
+            <h3 className="text-xl font-bold text-foreground mb-6 font-exo">
               Envie sua Mensagem
             </h3>
             

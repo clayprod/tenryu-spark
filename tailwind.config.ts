@@ -14,7 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
+        'exo': ['Exo 2', 'sans-serif'],
+        'roboto': ['Roboto Condensed', 'sans-serif'],
+        'pieces': ['Pieces of Eight', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

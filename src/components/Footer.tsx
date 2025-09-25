@@ -13,7 +13,6 @@ const Footer = () => {
     { label: "Início", id: "home" },
     { label: "Quem Somos", id: "sobre" },
     { label: "Clientes", id: "clientes" },
-    { label: "Produtos", id: "produtos" },
     { label: "Serviços", id: "servicos" },
     { label: "Contato", id: "contato" }
   ];
@@ -42,8 +41,8 @@ const Footer = () => {
                   className="h-12 w-auto"
                 />
                 <div>
-                  <h3 className="text-xl font-bold">TENRYU</h3>
-                  <p className="text-primary">CONSULTING</p>
+                  <h3 className="text-xl font-bold font-pieces">TENRYU</h3>
+                  <p className="text-primary font-pieces">CONSULTING</p>
                 </div>
               </div>
               

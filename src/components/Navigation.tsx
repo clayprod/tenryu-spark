@@ -8,7 +8,7 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "sobre", "clientes", "produtos", "servicos", "contato"];
+      const sections = ["home", "sobre", "clientes", "servicos", "contato"];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -36,7 +36,6 @@ const Navigation = () => {
     { id: "home", label: "Início" },
     { id: "sobre", label: "Quem Somos" },
     { id: "clientes", label: "Clientes" },
-    { id: "produtos", label: "Produtos" },
     { id: "servicos", label: "Serviços" },
     { id: "contato", label: "Contato" },
   ];
@@ -51,7 +50,7 @@ const Navigation = () => {
               alt="Tenryu Consulting" 
               className="h-10 w-auto"
             />
-            <span className="text-xl font-bold text-foreground">
+            <span className="text-xl font-bold text-foreground font-pieces">
               TENRYU <span className="text-primary">CONSULTING</span>
             </span>
           </div>

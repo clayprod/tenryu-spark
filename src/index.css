@@ -2,9 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Pieces of Eight';
+  src: url('/fonts/Pieces_of_Eight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Tenryu Consulting Design System 
-Paleta: neutros/cinzas para base + vermelho para destaque
-Tipografia: Inter (sans-serif moderna)
+Paleta: neutros/cinzas para base + vermelho #BE0505 para destaque
+Tipografia: Exo 2 (títulos), Roboto Condensed (texto), Pieces of Eight (marca)
 Estilo: corporativo minimalista
 */
 
@@ -20,10 +28,10 @@ Estilo: corporativo minimalista
     --popover: 0 0% 100%;
     --popover-foreground: 220 13% 18%;
 
-    /* Tenryu Red - cor principal */
-    --primary: 0 84% 50%;
+    /* Tenryu Red #BE0505 - cor principal */
+    --primary: 0 95% 37%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 0 84% 45%;
+    --primary-hover: 0 95% 32%;
     
     /* Cinzas neutros */
     --secondary: 220 14% 96%;
@@ -38,7 +46,7 @@ Estilo: corporativo minimalista
     /* Elementos de interface */
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 0 84% 50%;
+    --ring: 0 95% 37%;
     --radius: 0.75rem;
     
     /* Cores de feedback */
@@ -54,19 +62,12 @@ Estilo: corporativo minimalista
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -80,9 +81,9 @@ Estilo: corporativo minimalista
     --popover: 220 13% 12%;
     --popover-foreground: 220 14% 96%;
 
-    --primary: 0 84% 55%;
+    --primary: 0 95% 42%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 0 84% 50%;
+    --primary-hover: 0 95% 37%;
     
     --secondary: 220 13% 18%;
     --secondary-foreground: 220 14% 96%;
@@ -95,7 +96,7 @@ Estilo: corporativo minimalista
     
     --border: 220 13% 18%;
     --input: 220 13% 18%;
-    --ring: 0 84% 55%;
+    --ring: 0 95% 42%;
     
     --gradient-hero: linear-gradient(135deg, hsl(220 13% 12%) 0%, hsl(220 13% 21%) 100%);
     --shadow-card: 0 4px 6px -1px hsl(0 0% 0% / 0.25), 0 2px 4px -2px hsl(0 0% 0% / 0.15);
@@ -117,7 +118,7 @@ Estilo: corporativo minimalista
   }
 
   body {
-    @apply bg-background text-foreground font-inter antialiased;
+    @apply bg-background text-foreground font-roboto antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
