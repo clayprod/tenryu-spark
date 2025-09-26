@@ -16,7 +16,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center bg-gradient-hero relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center bg-gradient-hero relative overflow-hidden" itemScope itemType="https://schema.org/Organization">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:50px_50px]"></div>
@@ -24,12 +24,12 @@ const Hero = () => {
       
       <div className="container-tenryu relative z-10 pt-20 sm:pt-16 md:pt-12 lg:pt-8">
         <div className="max-w-4xl mx-auto text-center text-white">
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-exo">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-exo" itemProp="name">
             <span className="block">Transformamos <span className="bg-gradient-orange bg-clip-text text-transparent">Visões</span></span>
             <span className="block">em Negócios <span className="bg-gradient-orange bg-clip-text text-transparent">Reais</span></span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed" itemProp="description">
             Consultoria especializada em desenvolvimento de produtos, negócios e importação. 
             <strong className="text-white"> Redução de riscos e custos</strong> com expertise internacional 
             e <strong className="text-white">visão holística</strong> para seu sucesso.

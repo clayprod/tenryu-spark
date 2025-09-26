@@ -48,14 +48,14 @@ const Servicos = () => {
   ];
 
   return (
-    <section id="servicos" className="section-padding bg-secondary/30">
+    <section id="servicos" className="section-padding bg-secondary/30" itemScope itemType="https://schema.org/Service">
       <div className="container-tenryu">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground font-exo">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground font-exo" itemProp="name">
             <span className="bg-gradient-orange bg-clip-text text-transparent">Serviços</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed" itemProp="description">
             Soluções completas e personalizadas para cada etapa do seu negócio. 
             Investimos no seu sucesso com uma <strong className="text-foreground">abordagem holística</strong> e resultados mensuráveis.
           </p>

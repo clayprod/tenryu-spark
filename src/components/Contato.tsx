@@ -104,7 +104,7 @@ const Contato = () => {
   };
 
   return (
-    <section id="contato" className="section-padding bg-background relative">
+    <section id="contato" className="section-padding bg-background relative" itemScope itemType="https://schema.org/ContactPage">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(244,63,94,0.1)_0%,transparent_50%)]"></div>
@@ -113,12 +113,12 @@ const Contato = () => {
       <div className="container-tenryu relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground font-exo">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground font-exo" itemProp="name">
             Vamos Colocar <span className="text-primary">Sonhos</span> em
             <br className="hidden sm:block" />
             <span className="text-primary">Prática</span> <span className="text-primary">Juntos?</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed" itemProp="description">
             Estamos prontos para transformar suas ideias em negócios reais. 
             Entre em contato e vamos começar essa jornada de sucesso.
           </p>
