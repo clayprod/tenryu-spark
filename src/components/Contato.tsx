@@ -114,9 +114,9 @@ const Contato = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground font-exo">
-            Vamos Colocar <span className="text-primary">Sonhos</span> em 
+            Vamos Colocar <span className="text-primary">Sonhos</span> em
             <br className="hidden sm:block" />
-            Prática <span className="text-primary">Juntos?</span>
+            <span className="text-primary">Prática</span> <span className="text-primary">Juntos?</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Estamos prontos para transformar suas ideias em negócios reais. 
