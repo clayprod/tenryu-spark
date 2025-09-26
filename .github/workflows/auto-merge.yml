@@ -1,0 +1,30 @@
+name: Auto-merge PRs to main
+
+on:
+  pull_request:
+    types: [ opened, reopened, synchronize, ready_for_review ]
+    branches: [ main ]
+  pull_request_review:
+    types: [ submitted ]
+  check_suite:
+    types: [ completed ]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    steps:
+      - name: Auto-merge when checks pass and approved
+        uses: pascalgn/automerge-action@v0.16.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MERGE_METHOD: squash
+          MERGE_DELETE_BRANCH: "true"
+          UPDATE_METHOD: rebase
+          # Require approved review and successful checks
+          MERGE_LABELS: "automerge"
+

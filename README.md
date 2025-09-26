@@ -62,7 +62,34 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/85721bbf-497c-475e-abc0-46c9353cb8fa) and click on Share -> Publish.
+This repository is set up for container-based deploys and automated CI/CD.
+
+### Local build & run (Docker)
+
+```sh
+docker build -t myapp:local .
+docker run --rm -p 8080:80 myapp:local
+```
+
+### CI/CD (GitHub Actions + GHCR + EasyPanel)
+
+Workflows included:
+
+- `.github/workflows/deploy.yml` — builds and pushes `ghcr.io/<owner>/<repo>` and triggers EasyPanel redeploy on push to `main`.
+- `.github/workflows/auto-merge.yml` — auto-merges PRs labeled `automerge` once checks are green.
+- `.github/workflows/auto-label.yml` — adds `automerge` label when PR author is trusted (list in `TRUSTED_AUTO_LABEL_AUTHORS`).
+
+Required repository secrets:
+
+- `EASYPANEL_DEPLOY_HOOK_URL` — EasyPanel deploy webhook URL.
+- `TRUSTED_AUTO_LABEL_AUTHORS` — comma-separated GitHub usernames allowed to auto-label PRs.
+
+EasyPanel setup:
+
+1. Create a Docker Image app.
+2. Set image to `ghcr.io/<owner>/<repo>:main` (or a tag).
+3. Expose container port `80` and attach a domain.
+4. Create a Deploy Hook and paste the URL as `EASYPANEL_DEPLOY_HOOK_URL` secret in GitHub.
 
 ## Can I connect a custom domain to my Lovable project?
 
