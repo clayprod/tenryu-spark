@@ -1,4 +1,5 @@
 import { Target, Users, Globe, Award } from "lucide-react";
+import claytonPhoto from "@/assets/clayton-photo.png";
 
 const QuemSomos = () => {
   return (
@@ -22,7 +23,7 @@ const QuemSomos = () => {
             <div className="text-center lg:text-left">
               <div className="w-32 h-32 rounded-full overflow-hidden mx-auto lg:mx-0 mb-6 bg-gray-100">
                 <img 
-                  src="/src/assets/clayton-photo.png" 
+                  src={claytonPhoto} 
                   alt="Clayton Costa - Sócio-proprietário da Tenryu Consulting" 
                   className="w-full h-full object-cover"
                 />
