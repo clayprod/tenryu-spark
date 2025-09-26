@@ -43,12 +43,12 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b border-border">
       <div className="container-tenryu">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14">
           <div className="flex items-center">
             <img 
               src={tenryuLogo} 
               alt="Tenryu Consulting - Especialistas em desenvolvimento de negócios e importação" 
-              className="h-16 w-auto"
+              className="h-10 w-auto"
             />
           </div>
 
