@@ -94,7 +94,7 @@ const Footer = () => {
         <div className="py-6 border-t border-white/20">
             <div className="text-center">
               <div className="text-gray-300 text-sm">
-                © 2024 Tenryu LTDA - CNPJ: 45.693.933/0001-40. Todos os direitos reservados.
+                © 2025 Tenryu LTDA - CNPJ: 45.693.933/0001-40. Todos os direitos reservados.
               </div>
             </div>
         </div>
