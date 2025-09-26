@@ -277,16 +277,6 @@ const Contato = () => {
               
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Globe className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <p className="font-medium text-foreground text-lg">tenryu.com.br</p>
-                  <p className="text-sm text-muted-foreground">Site institucional</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
                 <div>
