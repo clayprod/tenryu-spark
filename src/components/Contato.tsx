@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Phone, Mail, Globe, MapPin, Send } from "lucide-react";
 
 const Contato = () => {
@@ -8,6 +8,29 @@ const Contato = () => {
     company: "",
     message: ""
   });
+
+  const [showStickyButton, setShowStickyButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const homeSection = document.getElementById("home");
+      const contactSection = document.getElementById("contato");
+      
+      if (homeSection && contactSection) {
+        const homeBottom = homeSection.offsetTop + homeSection.offsetHeight;
+        const contactTop = contactSection.offsetTop;
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
+        
+        // Show button when user has scrolled past home section and is not in contact section
+        setShowStickyButton(scrollPosition > homeBottom && scrollPosition < contactTop);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Check initial position
+    
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -181,17 +204,19 @@ const Contato = () => {
         </div>
 
         {/* CTA Sticky Mobile */}
-        <div className="fixed bottom-4 left-4 right-4 md:hidden z-50">
-          <button 
-            onClick={() => {
-              const element = document.getElementById("contato");
-              if (element) element.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="w-full btn-hero shadow-2xl"
-          >
-            Agende uma Reunião
-          </button>
-        </div>
+        {showStickyButton && (
+          <div className="fixed bottom-4 left-4 right-4 md:hidden z-50">
+            <button 
+              onClick={() => {
+                const element = document.getElementById("contato");
+                if (element) element.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="w-full btn-hero shadow-2xl"
+            >
+              Agende uma Reunião
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
