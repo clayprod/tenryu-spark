@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Phone, Mail, Globe, MapPin, Send, CheckCircle, X, Instagram } from "lucide-react";
+import emailjs from '@emailjs/browser';
 
 const Contato = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ const Contato = () => {
 
   const [showStickyButton, setShowStickyButton] = useState(false);
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [showErrorPopup, setShowErrorPopup] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,17 +36,46 @@ const Contato = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would integrate with your email service
-    console.log("Form submitted:", formData);
-    setShowSuccessPopup(true);
-    setFormData({ name: "", email: "", company: "", message: "" });
-    
-    // Auto-hide popup after 5 seconds
-    setTimeout(() => {
-      setShowSuccessPopup(false);
-    }, 5000);
+    setIsLoading(true);
+
+    try {
+      // Configurações do EmailJS para Umbler
+      const serviceID = 'service_umbler'; // Você precisará criar este serviço no EmailJS
+      const templateID = 'template_tenryu'; // Template que criaremos
+      const userID = 'YOUR_EMAILJS_USER_ID'; // Sua chave pública do EmailJS
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        company_name: formData.company || 'Não informado',
+        message: formData.message,
+        to_email: 'clayton@tenryu.com.br',
+        subject: `Contato Tenryu - ${formData.name}${formData.company ? ` (${formData.company})` : ''}`
+      };
+
+      await emailjs.send(serviceID, templateID, templateParams, userID);
+      
+      setShowSuccessPopup(true);
+      setFormData({ name: "", email: "", company: "", message: "" });
+      
+      // Auto-hide popup after 5 seconds
+      setTimeout(() => {
+        setShowSuccessPopup(false);
+      }, 5000);
+      
+    } catch (error) {
+      console.error('Erro ao enviar e-mail:', error);
+      setShowErrorPopup(true);
+      
+      // Auto-hide error popup after 5 seconds
+      setTimeout(() => {
+        setShowErrorPopup(false);
+      }, 5000);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -147,10 +179,20 @@ const Contato = () => {
               
               <button
                 type="submit"
-                className="w-full btn-hero flex items-center justify-center gap-2"
+                disabled={isLoading}
+                className="w-full btn-hero flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <Send size={18} />
-                Enviar Mensagem
+                {isLoading ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    Enviando...
+                  </>
+                ) : (
+                  <>
+                    <Send size={18} />
+                    Enviar Mensagem
+                  </>
+                )}
               </button>
             </form>
             
@@ -245,6 +287,41 @@ const Contato = () => {
             >
               Agende uma Reunião
             </button>
+          </div>
+        )}
+
+        {/* Error Popup */}
+        {showErrorPopup && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl transform animate-in fade-in-0 zoom-in-95 duration-300">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <X className="w-8 h-8 text-red-600" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-foreground mb-2 font-exo">
+                  Erro ao Enviar!
+                </h3>
+                
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Houve um problema ao enviar sua mensagem. Por favor, tente novamente ou entre em contato diretamente.
+                </p>
+                
+                <button
+                  onClick={() => setShowErrorPopup(false)}
+                  className="w-full bg-red-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-600 transition-colors"
+                >
+                  Entendi
+                </button>
+              </div>
+              
+              <button
+                onClick={() => setShowErrorPopup(false)}
+                className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
           </div>
         )}
 
