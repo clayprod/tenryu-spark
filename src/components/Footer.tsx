@@ -33,8 +33,8 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="mb-6">
-                <h3 className="text-xl font-bold font-pieces mb-2">TENRYU</h3>
-                <p className="text-white text-lg font-exo">CONSULTING</p>
+                <h3 className="text-xl font-bold font-pieces mb-2">tenryu</h3>
+                <p className="text-white text-lg">CONSULTING</p>
               </div>
               
               <p className="text-gray-300 mb-6 max-w-md leading-relaxed">

@@ -97,27 +97,6 @@ const Clientes = () => {
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center">
-          <div className="card-tenryu max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-foreground mb-4 font-exo">
-              Quer ser nosso próximo cliente?
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              Vamos conversar sobre como podemos ajudar sua empresa a alcançar 
-              resultados extraordinários.
-            </p>
-            <button 
-              onClick={() => {
-                const element = document.getElementById("contato");
-                if (element) element.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="btn-hero"
-            >
-              Solicitar Proposta
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   );
