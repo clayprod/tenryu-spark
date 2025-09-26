@@ -1,4 +1,3 @@
-import { Heart, ExternalLink } from "lucide-react";
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -93,30 +92,10 @@ const Footer = () => {
 
         {/* Bottom Footer */}
         <div className="py-6 border-t border-white/20">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-gray-300 text-sm text-center md:text-left">
+          <div className="text-center">
+            <div className="text-gray-300 text-sm">
               © 2024 Tenryu Consulting. Todos os direitos reservados.
             </div>
-            
-            <div className="flex items-center gap-4 text-sm">
-              <span className="text-gray-400">Créditos de design:</span>
-              <a 
-                href="/creditos" 
-                className="text-gray-300 hover:text-primary transition-colors flex items-center gap-1"
-              >
-                Slidesgo, Flaticon & Freepik
-                <ExternalLink size={12} />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Made with Love */}
-        <div className="py-4 border-t border-white/10">
-          <div className="text-center">
-            <p className="text-gray-400 text-sm flex items-center justify-center gap-2">
-              Feito com <Heart size={16} className="text-primary" /> para transformar sonhos em realidade
-            </p>
           </div>
         </div>
       </div>
