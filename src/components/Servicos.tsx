@@ -6,7 +6,7 @@ const Servicos = () => {
       icon: <Search className="w-8 h-8" />,
       title: "Pesquisa de Mercado",
       description: "Análise completa de mercado, identificação de oportunidades, estudo de concorrência e validação de demanda para novos produtos e negócios.",
-      features: ["Análise de tendências", "Mapeamento competitivo", "Validação de demanda", "Relatórios detalhados"]
+      features: ["Análise de tendências", "Mapeamento competitivo", "Validação de demanda", "Outsourcing"]
     },
     {
       icon: <BarChart3 className="w-8 h-8" />,
