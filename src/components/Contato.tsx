@@ -165,7 +165,14 @@ const Contato = () => {
                   <Phone className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <p className="font-medium text-foreground text-lg">(11) 94190-1424</p>
+                  <a 
+                    href="https://wa.me/5511941901424" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="font-medium text-foreground text-lg hover:text-primary transition-colors cursor-pointer"
+                  >
+                    (11) 94190-1424
+                  </a>
                   <p className="text-sm text-muted-foreground">WhatsApp disponível</p>
                 </div>
               </div>
