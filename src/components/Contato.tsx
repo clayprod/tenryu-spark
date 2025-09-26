@@ -41,18 +41,21 @@ const Contato = () => {
     setIsLoading(true);
 
     try {
-      // TEMPORÁRIO: Simular envio enquanto EmailJS não está configurado
-      console.log('Dados do formulário:', {
+      // Configurações do EmailJS para Umbler
+      const serviceID = 'tenryu-app-mail'; // Seu Service ID
+      const templateID = 'EqACUy9RbpotnVQ0iiKCI'; // Seu Template ID
+      const userID = 'ZrftApoiQ6NDmVqNB'; // Sua Public Key
+
+      const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
         company_name: formData.company || 'Não informado',
         message: formData.message,
         to_email: 'clayton@tenryu.com.br',
         subject: `Contato Tenryu - ${formData.name}${formData.company ? ` (${formData.company})` : ''}`
-      });
+      };
 
-      // Simular delay de envio
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await emailjs.send(serviceID, templateID, templateParams, userID);
       
       setShowSuccessPopup(true);
       setFormData({ name: "", email: "", company: "", message: "" });
