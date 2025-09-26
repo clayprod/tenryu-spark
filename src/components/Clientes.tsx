@@ -83,12 +83,12 @@ const Clientes = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {clients.map((client, index) => (
               <div key={index} className="card-tenryu text-center group">
-                <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-all p-3">
+                <div className="w-24 h-24 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300 p-4 border border-gray-100">
                   {client.logo ? (
                     <img 
                       src={client.logo} 
                       alt={`${client.name} logo`}
-                      className="max-w-full max-h-full object-contain"
+                      className="max-w-full max-h-full object-contain filter brightness-0 contrast-100"
                     />
                   ) : (
                     <div className="text-2xl font-bold text-gray-400">
