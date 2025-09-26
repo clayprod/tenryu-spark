@@ -24,10 +24,12 @@ const Hero = () => {
       
       <div className="container-tenryu relative z-10">
         <div className="max-w-4xl mx-auto text-center text-white">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-exo">
-            Transformamos <span className="text-primary">Visões</span> em 
-            <br className="hidden sm:block" />
-            Negócios <span className="text-primary">Reais</span>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-exo">
+            <span className="block sm:inline">Transformamos</span>{" "}
+            <span className="text-primary">Visões</span>{" "}
+            <span className="block sm:inline">em</span>{" "}
+            <span className="block sm:inline">Negócios</span>{" "}
+            <span className="text-primary">Reais</span>
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">
