@@ -11,55 +11,42 @@ const Clientes = () => {
   const clients = [
     {
       name: "ELG",
-      description: "Soluções em tecnologia",
-      website: "elg.com.br",
+      website: "https://elg.com.br",
       logo: elgLogo
     },
     {
-      name: "Fagundez",
-      description: "Distribuição especializada",
-      website: "fagundez.com",
-      logo: null // Fagundez não tem logo no upload
-    },
-    {
       name: "Husky Gaming",
-      description: "Gaming e e-sports",
+      website: "https://huskygaming.com.br",
       logo: huskyLogo
     },
     {
       name: "Waaw",
-      description: "Marca by Alok",
-      website: "waaw.com.br",
+      website: "https://waaw.com.br",
       logo: waawLogo
     },
     {
       name: "FiberX",
-      description: "Soluções em fibra óptica",
-      website: "fiberx.com.br",
+      website: "https://fiberx.com.br",
       logo: fiberxLogo
     },
     {
       name: "Wap",
-      description: "Indústria e tecnologia",
-      website: "wap.ind.br",
+      website: "https://wap.ind.br",
       logo: wapLogo
     },
     {
       name: "Velds",
-      description: "Soluções tecnológicas",
-      website: "velds.com.br",
+      website: "https://velds.com.br",
       logo: veldsLogo
     },
     {
       name: "KaBuM!",
-      description: "Líder em e-commerce de tecnologia",
-      website: "kabum.com.br",
+      website: "https://kabum.com.br",
       logo: kabumLogo
     },
     {
       name: "Grupo Multi",
-      description: "Distribuição multimarca",
-      website: "multilaser.com.br",
+      website: "https://multilaser.com.br",
       logo: grupomultiLogo
     }
   ];
@@ -80,34 +67,26 @@ const Clientes = () => {
 
         {/* Clients Grid */}
         <div className="mb-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8">
             {clients.map((client, index) => (
-              <div key={index} className="card-tenryu text-center group">
-                <div className="w-24 h-24 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300 p-4 border border-gray-100">
-                  {client.logo ? (
-                    <img 
-                      src={client.logo} 
-                      alt={`${client.name} logo`}
-                      className="max-w-full max-h-full object-contain filter brightness-0 contrast-100"
-                    />
-                  ) : (
-                    <div className="text-2xl font-bold text-gray-400">
-                      {client.name.charAt(0)}
-                    </div>
-                  )}
+              <a 
+                key={index} 
+                href={client.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col items-center justify-center p-6 bg-white rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 border border-gray-100"
+              >
+                <div className="w-20 h-20 flex items-center justify-center mb-3">
+                  <img 
+                    src={client.logo} 
+                    alt={`${client.name} logo`}
+                    className="max-w-full max-h-full object-contain"
+                  />
                 </div>
-                <h4 className="text-xl font-bold text-foreground mb-2 font-exo">
+                <span className="text-sm font-medium text-gray-600 group-hover:text-primary transition-colors">
                   {client.name}
-                </h4>
-                <p className="text-muted-foreground text-sm mb-3">
-                  {client.description}
-                </p>
-                {client.website && (
-                  <p className="text-primary text-sm font-medium">
-                    {client.website}
-                  </p>
-                )}
-              </div>
+                </span>
+              </a>
             ))}
           </div>
         </div>
