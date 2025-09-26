@@ -48,7 +48,7 @@ const Navigation = () => {
             <img 
               src={tenryuLogo} 
               alt="Tenryu Consulting - Especialistas em desenvolvimento de negócios e importação" 
-              className="h-14 w-auto"
+              className="h-16 w-auto"
             />
           </div>
 
