@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Phone, Mail, Globe, MapPin, Send } from "lucide-react";
+import { Phone, Mail, Globe, MapPin, Send, CheckCircle, X } from "lucide-react";
 
 const Contato = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +10,7 @@ const Contato = () => {
   });
 
   const [showStickyButton, setShowStickyButton] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,8 +37,13 @@ const Contato = () => {
     e.preventDefault();
     // Here you would integrate with your email service
     console.log("Form submitted:", formData);
-    alert("Mensagem enviada! Responderemos em até 1 dia útil.");
+    setShowSuccessPopup(true);
     setFormData({ name: "", email: "", company: "", message: "" });
+    
+    // Auto-hide popup after 5 seconds
+    setTimeout(() => {
+      setShowSuccessPopup(false);
+    }, 5000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -222,6 +228,41 @@ const Contato = () => {
             >
               Agende uma Reunião
             </button>
+          </div>
+        )}
+
+        {/* Success Popup */}
+        {showSuccessPopup && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl transform animate-in fade-in-0 zoom-in-95 duration-300">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-8 h-8 text-green-600" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-foreground mb-2 font-exo">
+                  Mensagem Enviada!
+                </h3>
+                
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Obrigado pelo seu contato! Responderemos em até <strong className="text-foreground">1 dia útil</strong>.
+                </p>
+                
+                <button
+                  onClick={() => setShowSuccessPopup(false)}
+                  className="w-full bg-gradient-orange text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+                >
+                  Entendi
+                </button>
+              </div>
+              
+              <button
+                onClick={() => setShowSuccessPopup(false)}
+                className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
           </div>
         )}
       </div>
