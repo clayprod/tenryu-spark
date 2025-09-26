@@ -265,7 +265,12 @@ const Contato = () => {
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <p className="font-medium text-foreground text-lg">clayton@tenryu.com.br</p>
+                  <a
+                    href="mailto:clayton@tenryu.com.br"
+                    className="font-medium text-foreground text-lg hover:text-primary transition-colors cursor-pointer"
+                  >
+                    clayton@tenryu.com.br
+                  </a>
                   <p className="text-sm text-muted-foreground">Resposta em até 24h</p>
                 </div>
               </div>
