@@ -43,7 +43,7 @@ const Contato = () => {
     try {
       // Configurações do EmailJS para Umbler
       const serviceID = 'tenryu-app-mail'; // Seu Service ID
-      const templateID = 'EqACUy9RbpotnVQ0iiKCI'; // Seu Template ID
+      const templateID = 'template_hl2gm4g'; // Seu Template ID
       const userID = 'ZrftApoiQ6NDmVqNB'; // Sua Public Key
 
       const templateParams = {
