@@ -44,15 +44,12 @@ const Navigation = () => {
     <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b border-border">
       <div className="container-tenryu">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center">
             <img 
               src={tenryuLogo} 
-              alt="Tenryu Consulting" 
-              className="h-10 w-auto"
+              alt="Tenryu Consulting - Especialistas em desenvolvimento de negócios e importação" 
+              className="h-14 w-auto"
             />
-            <span className="text-xl font-bold text-foreground font-pieces">
-              TENRYU <span className="text-primary">CONSULTING</span>
-            </span>
           </div>
 
           {/* Desktop Navigation */}
@@ -70,7 +67,7 @@ const Navigation = () => {
             ))}
             <button 
               onClick={() => scrollToSection("contato")}
-              className="btn-hero"
+              className="bg-primary text-primary-foreground hover:bg-primary-hover px-4 py-2 rounded-md text-sm font-medium transition-colors"
             >
               Agende uma Reunião
             </button>
@@ -107,7 +104,7 @@ const Navigation = () => {
               <div className="pt-2">
                 <button 
                   onClick={() => scrollToSection("contato")}
-                  className="btn-hero w-full"
+                  className="bg-primary text-primary-foreground hover:bg-primary-hover px-4 py-2 rounded-md text-sm font-medium transition-colors w-full"
                 >
                   Agende uma Reunião
                 </button>

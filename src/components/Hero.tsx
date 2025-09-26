@@ -58,7 +58,7 @@ const Hero = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
             {[
               { number: "500+", label: "Produtos Lançados" },
-              { number: "9", label: "Marcas Atendidas" },
+              { number: "10+", label: "Marcas Atendidas" },
               { number: "20+", label: "Categorias de Produtos" }
             ].map((stat, index) => (
               <div key={index} className="text-center">

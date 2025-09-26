@@ -1,27 +1,66 @@
-import { Building2, TrendingUp, Users, Zap } from "lucide-react";
+import elgLogo from "@/assets/clients/elg.png";
+import fiberxLogo from "@/assets/clients/fiberx.png";
+import grupomultiLogo from "@/assets/clients/grupomulti.png";
+import huskyLogo from "@/assets/clients/husky.png";
+import kabumLogo from "@/assets/clients/kabum.png";
+import veldsLogo from "@/assets/clients/velds.png";
+import wapLogo from "@/assets/clients/wap.png";
+import waawLogo from "@/assets/clients/waaw.webp";
 
 const Clientes = () => {
   const clients = [
     {
-      name: "KaBuM!",
-      description: "Líder em e-commerce de tecnologia",
-      website: "www.kabum.com.br",
-      icon: <Zap className="w-8 h-8" />
+      name: "ELG",
+      description: "Soluções em tecnologia",
+      website: "elg.com.br",
+      logo: elgLogo
     },
     {
-      name: "Fiber",
+      name: "Fagundez",
+      description: "Distribuição especializada",
+      website: "fagundez.com",
+      logo: null // Fagundez não tem logo no upload
+    },
+    {
+      name: "Husky Gaming",
+      description: "Gaming e e-sports",
+      logo: huskyLogo
+    },
+    {
+      name: "Waaw",
+      description: "Marca by Alok",
+      website: "waaw.com.br",
+      logo: waawLogo
+    },
+    {
+      name: "FiberX",
       description: "Soluções em fibra óptica",
-      icon: <TrendingUp className="w-8 h-8" />
+      website: "fiberx.com.br",
+      logo: fiberxLogo
+    },
+    {
+      name: "Wap",
+      description: "Indústria e tecnologia",
+      website: "wap.ind.br",
+      logo: wapLogo
+    },
+    {
+      name: "Velds",
+      description: "Soluções tecnológicas",
+      website: "velds.com.br",
+      logo: veldsLogo
+    },
+    {
+      name: "KaBuM!",
+      description: "Líder em e-commerce de tecnologia",
+      website: "kabum.com.br",
+      logo: kabumLogo
     },
     {
       name: "Grupo Multi",
       description: "Distribuição multimarca",
-      icon: <Building2 className="w-8 h-8" />
-    },
-    {
-      name: "Dagundez Distribuição",
-      description: "Distribuição especializada",
-      icon: <Users className="w-8 h-8" />
+      website: "multilaser.com.br",
+      logo: grupomultiLogo
     }
   ];
 
@@ -41,13 +80,21 @@ const Clientes = () => {
 
         {/* Clients Grid */}
         <div className="mb-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {clients.map((client, index) => (
               <div key={index} className="card-tenryu text-center group">
-                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-                  <div className="text-primary">
-                    {client.icon}
-                  </div>
+                <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-all p-3">
+                  {client.logo ? (
+                    <img 
+                      src={client.logo} 
+                      alt={`${client.name} logo`}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  ) : (
+                    <div className="text-2xl font-bold text-gray-400">
+                      {client.name.charAt(0)}
+                    </div>
+                  )}
                 </div>
                 <h4 className="text-xl font-bold text-foreground mb-2 font-exo">
                   {client.name}

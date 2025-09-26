@@ -57,9 +57,9 @@ const QuemSomos = () => {
           <div className="space-y-8">
             <div className="card-tenryu group">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <Target className="w-6 h-6 text-primary" />
-                </div>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+                <Target className="w-6 h-6 text-primary" />
+              </div>
                 <div>
                   <h4 className="text-xl font-semibold text-foreground mb-2 font-exo">
                     Visão Holística
@@ -74,9 +74,9 @@ const QuemSomos = () => {
 
             <div className="card-tenryu group">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <Users className="w-6 h-6 text-primary" />
-                </div>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+                <Users className="w-6 h-6 text-primary" />
+              </div>
                 <div>
                   <h4 className="text-xl font-semibold text-foreground mb-2 font-exo">
                     Equipe Multidisciplinar
@@ -91,9 +91,9 @@ const QuemSomos = () => {
 
             <div className="card-tenryu group">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <Globe className="w-6 h-6 text-primary" />
-                </div>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+                <Globe className="w-6 h-6 text-primary" />
+              </div>
                 <div>
                   <h4 className="text-xl font-semibold text-foreground mb-2 font-exo">
                     Experiência Internacional

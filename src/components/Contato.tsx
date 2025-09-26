@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Calendar, Phone, Mail, Globe, MapPin, Clock, Send, ExternalLink } from "lucide-react";
+import { Phone, Mail, Globe, MapPin, Send } from "lucide-react";
 
 const Contato = () => {
   const [formData, setFormData] = useState({
@@ -24,24 +24,6 @@ const Contato = () => {
     });
   };
 
-  const meetingLinks = [
-    { 
-      label: "Agendar Reunião Principal",
-      url: "#", // Replace with actual bit.ly link
-      description: "Link principal para agendamento"
-    },
-    { 
-      label: "Reunião Expressa (30min)",
-      url: "#", // Replace with actual bit.ly link  
-      description: "Para consultas rápidas"
-    },
-    { 
-      label: "Reunião Completa (60min)",
-      url: "#", // Replace with actual bit.ly link
-      description: "Para projetos complexos"
-    }
-  ];
-
   return (
     <section id="contato" className="section-padding bg-background relative">
       {/* Background Pattern */}
@@ -63,95 +45,9 @@ const Contato = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Contact Information */}
-          <div className="space-y-8">
-            {/* Meeting Links */}
-            <div className="card-tenryu">
-              <div className="flex items-center gap-3 mb-6">
-                <Calendar className="w-6 h-6 text-primary" />
-                <h3 className="text-xl font-bold text-foreground font-exo">
-                  Agende uma Reunião
-                </h3>
-              </div>
-              
-              <div className="space-y-4">
-                {meetingLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block p-4 border border-border rounded-lg hover:border-primary/50 hover:bg-primary/5 transition-all group"
-                  >
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                          {link.label}
-                        </h4>
-                        <p className="text-sm text-muted-foreground">
-                          {link.description}
-                        </p>
-                      </div>
-                      <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Contact Details */}
-            <div className="card-tenryu">
-              <h3 className="text-xl font-bold text-foreground mb-6 font-exo">
-                Outras Formas de Contato
-              </h3>
-              
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-primary" />
-                  <div>
-                    <p className="font-medium text-foreground">(11) 94190-1424</p>
-                    <p className="text-sm text-muted-foreground">WhatsApp disponível</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-primary" />
-                  <div>
-                    <p className="font-medium text-foreground">clayton@tenryu.com.br</p>
-                    <p className="text-sm text-muted-foreground">Resposta em até 24h</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3">
-                  <Globe className="w-5 h-5 text-primary" />
-                  <div>
-                    <p className="font-medium text-foreground">tenryu.com.br</p>
-                    <p className="text-sm text-muted-foreground">Site institucional</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5 text-primary" />
-                  <div>
-                    <p className="font-medium text-foreground">São Paulo, SP</p>
-                    <p className="text-sm text-muted-foreground">Atendimento nacional</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-primary" />
-                  <div>
-                    <p className="font-medium text-foreground">Seg - Sex: 9h às 18h</p>
-                    <p className="text-sm text-muted-foreground">Horário comercial</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+        <div className="grid lg:grid-cols-1 gap-12">
           {/* Contact Form */}
-          <div className="card-tenryu">
+          <div className="card-tenryu max-w-2xl mx-auto">
             <h3 className="text-xl font-bold text-foreground mb-6 font-exo">
               Envie sua Mensagem
             </h3>
@@ -232,6 +128,49 @@ const Contato = () => {
             <p className="text-sm text-muted-foreground mt-4 text-center">
               * Campos obrigatórios. Responderemos em até 1 dia útil.
             </p>
+          </div>
+        </div>
+
+        {/* Other Contact Methods */}
+        <div className="mt-16">
+          <div className="card-tenryu max-w-2xl mx-auto">
+            <h3 className="text-xl font-bold text-foreground mb-6 font-exo text-center">
+              Outras Formas de Contato
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-primary" />
+                <div>
+                  <p className="font-medium text-foreground">(11) 94190-1424</p>
+                  <p className="text-sm text-muted-foreground">WhatsApp disponível</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-primary" />
+                <div>
+                  <p className="font-medium text-foreground">clayton@tenryu.com.br</p>
+                  <p className="text-sm text-muted-foreground">Resposta em até 24h</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3">
+                <Globe className="w-5 h-5 text-primary" />
+                <div>
+                  <p className="font-medium text-foreground">tenryu.com.br</p>
+                  <p className="text-sm text-muted-foreground">Site institucional</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3">
+                <MapPin className="w-5 h-5 text-primary" />
+                <div>
+                  <p className="font-medium text-foreground">São Paulo, SP</p>
+                  <p className="text-sm text-muted-foreground">Atendimento nacional</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

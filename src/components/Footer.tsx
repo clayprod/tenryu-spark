@@ -1,5 +1,4 @@
 import { Heart, ExternalLink } from "lucide-react";
-import tenryuLogo from "@/assets/tenryu-logo.png";
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -34,16 +33,9 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="lg:col-span-2">
-              <div className="flex items-center gap-3 mb-6">
-                <img 
-                  src={tenryuLogo} 
-                  alt="Tenryu Consulting" 
-                  className="h-12 w-auto"
-                />
-                <div>
-                  <h3 className="text-xl font-bold font-pieces">TENRYU</h3>
-                  <p className="text-primary font-pieces">CONSULTING</p>
-                </div>
+              <div className="mb-6">
+                <h3 className="text-xl font-bold font-pieces mb-2">TENRYU</h3>
+                <p className="text-white text-lg">CONSULTING</p>
               </div>
               
               <p className="text-gray-300 mb-6 max-w-md leading-relaxed">
