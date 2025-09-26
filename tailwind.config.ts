@@ -66,10 +66,13 @@ export default {
       },
       backgroundImage: {
         'gradient-hero': 'var(--gradient-hero)',
+        'gradient-orange': 'var(--gradient-orange)',
+        'gradient-orange-subtle': 'var(--gradient-orange-subtle)',
       },
       boxShadow: {
         'card': 'var(--shadow-card)',
         'hover': 'var(--shadow-hover)',
+        'orange': 'var(--shadow-orange)',
       },
       borderRadius: {
         lg: "var(--radius)",

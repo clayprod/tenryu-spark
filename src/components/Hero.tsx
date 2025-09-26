@@ -26,10 +26,10 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center text-white">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-exo">
             <span className="block sm:inline">Transformamos</span>{" "}
-            <span className="text-primary">Visões</span>{" "}
+            <span className="bg-gradient-orange bg-clip-text text-transparent">Visões</span>{" "}
             <span className="block sm:inline">em</span>{" "}
             <span className="block sm:inline">Negócios</span>{" "}
-            <span className="text-primary">Reais</span>
+            <span className="bg-gradient-orange bg-clip-text text-transparent">Reais</span>
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">
@@ -64,7 +64,7 @@ const Hero = () => {
               { number: "20+", label: "Categorias de Produtos" }
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                <div className="text-3xl md:text-4xl font-bold bg-gradient-orange bg-clip-text text-transparent mb-2">
                   {stat.number}
                 </div>
                 <div className="text-gray-300 text-sm md:text-base">

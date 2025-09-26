@@ -28,10 +28,16 @@ Estilo: corporativo minimalista
     --popover: 0 0% 100%;
     --popover-foreground: 220 13% 18%;
 
-    /* Tenryu Orange - cor principal #da2f0a */
-    --primary: 8 85% 45%;
+    /* Tenryu Orange Palette - cor principal #FE5F2F */
+    --primary: 12 99% 59%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 8 85% 40%;
+    --primary-hover: 12 99% 54%;
+    
+    /* Orange variations */
+    --orange-light: 45 100% 60%; /* #FFCC33 */
+    --orange-medium: 32 100% 60%; /* #FFA832 */
+    --orange-main: 12 99% 59%; /* #FE5F2F */
+    --orange-dark: 8 98% 58%; /* #FD3A2D */
     
     /* Cinzas neutros */
     --secondary: 220 14% 96%;
@@ -46,7 +52,7 @@ Estilo: corporativo minimalista
     /* Elementos de interface */
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 8 85% 45%;
+    --ring: 12 99% 59%;
     --radius: 0.75rem;
     
     /* Cores de feedback */
@@ -55,8 +61,11 @@ Estilo: corporativo minimalista
     
     /* Gradientes e efeitos */
     --gradient-hero: linear-gradient(135deg, hsl(220 13% 18%) 0%, hsl(220 13% 32%) 100%);
+    --gradient-orange: linear-gradient(135deg, hsl(45 100% 60%) 0%, hsl(8 98% 58%) 100%);
+    --gradient-orange-subtle: linear-gradient(135deg, hsl(45 100% 60% / 0.1) 0%, hsl(8 98% 58% / 0.1) 100%);
     --shadow-card: 0 4px 6px -1px hsl(220 13% 18% / 0.1), 0 2px 4px -2px hsl(220 13% 18% / 0.1);
     --shadow-hover: 0 10px 15px -3px hsl(220 13% 18% / 0.1), 0 4px 6px -4px hsl(220 13% 18% / 0.1);
+    --shadow-orange: 0 4px 15px -3px hsl(12 99% 59% / 0.3), 0 2px 8px -2px hsl(12 99% 59% / 0.2);
     
     /* Transições */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -81,9 +90,9 @@ Estilo: corporativo minimalista
     --popover: 220 13% 12%;
     --popover-foreground: 220 14% 96%;
 
-    --primary: 8 85% 50%;
+    --primary: 12 99% 64%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 8 85% 45%;
+    --primary-hover: 12 99% 59%;
     
     --secondary: 220 13% 18%;
     --secondary-foreground: 220 14% 96%;
@@ -96,11 +105,14 @@ Estilo: corporativo minimalista
     
     --border: 220 13% 18%;
     --input: 220 13% 18%;
-    --ring: 8 85% 50%;
+    --ring: 12 99% 64%;
     
     --gradient-hero: linear-gradient(135deg, hsl(220 13% 12%) 0%, hsl(220 13% 21%) 100%);
+    --gradient-orange: linear-gradient(135deg, hsl(45 100% 65%) 0%, hsl(8 98% 63%) 100%);
+    --gradient-orange-subtle: linear-gradient(135deg, hsl(45 100% 65% / 0.15) 0%, hsl(8 98% 63% / 0.15) 100%);
     --shadow-card: 0 4px 6px -1px hsl(0 0% 0% / 0.25), 0 2px 4px -2px hsl(0 0% 0% / 0.15);
     --shadow-hover: 0 10px 15px -3px hsl(0 0% 0% / 0.25), 0 4px 6px -4px hsl(0 0% 0% / 0.15);
+    --shadow-orange: 0 4px 15px -3px hsl(12 99% 64% / 0.4), 0 2px 8px -2px hsl(12 99% 64% / 0.3);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -130,9 +142,10 @@ Estilo: corporativo minimalista
 @layer components {
   /* Botões com variantes Tenryu */
   .btn-hero {
-    @apply bg-primary text-primary-foreground hover:bg-primary-hover;
+    background: var(--gradient-orange);
+    @apply text-primary-foreground hover:opacity-90;
     @apply px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300;
-    @apply shadow-lg hover:shadow-xl hover:scale-105;
+    @apply shadow-orange hover:shadow-xl hover:scale-105;
   }
   
   .btn-secondary {

@@ -52,12 +52,12 @@ const Clientes = () => {
   ];
 
   return (
-    <section id="clientes" className="section-padding bg-secondary/30">
+    <section id="clientes" className="section-padding bg-gradient-orange-subtle">
       <div className="container-tenryu">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground font-exo">
-            Nossos <span className="text-primary">Clientes</span>
+            Nossos <span className="bg-gradient-orange bg-clip-text text-transparent">Clientes</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Parcerias estratégicas que geram resultados reais. Conheça algumas empresas que 
