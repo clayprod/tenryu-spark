@@ -45,9 +45,9 @@ const Contato = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-1 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Contact Form */}
-          <div className="card-tenryu max-w-2xl mx-auto">
+          <div className="card-tenryu">
             <h3 className="text-xl font-bold text-foreground mb-6 font-exo">
               Envie sua Mensagem
             </h3>
@@ -125,48 +125,54 @@ const Contato = () => {
               </button>
             </form>
             
-            <p className="text-sm text-muted-foreground mt-4 text-center">
+            <p className="text-sm text-muted-foreground mt-4 text-center lg:text-left">
               * Campos obrigatórios. Responderemos em até 1 dia útil.
             </p>
           </div>
-        </div>
 
-        {/* Other Contact Methods */}
-        <div className="mt-16">
-          <div className="card-tenryu max-w-2xl mx-auto">
-            <h3 className="text-xl font-bold text-foreground mb-6 font-exo text-center">
+          {/* Other Contact Methods */}
+          <div className="card-tenryu">
+            <h3 className="text-xl font-bold text-foreground mb-6 font-exo">
               Outras Formas de Contato
             </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-primary" />
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <Phone className="w-6 h-6 text-primary" />
+                </div>
                 <div>
-                  <p className="font-medium text-foreground">(11) 94190-1424</p>
+                  <p className="font-medium text-foreground text-lg">(11) 94190-1424</p>
                   <p className="text-sm text-muted-foreground">WhatsApp disponível</p>
                 </div>
               </div>
               
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary" />
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-primary" />
+                </div>
                 <div>
-                  <p className="font-medium text-foreground">clayton@tenryu.com.br</p>
+                  <p className="font-medium text-foreground text-lg">clayton@tenryu.com.br</p>
                   <p className="text-sm text-muted-foreground">Resposta em até 24h</p>
                 </div>
               </div>
               
-              <div className="flex items-center gap-3">
-                <Globe className="w-5 h-5 text-primary" />
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <Globe className="w-6 h-6 text-primary" />
+                </div>
                 <div>
-                  <p className="font-medium text-foreground">tenryu.com.br</p>
+                  <p className="font-medium text-foreground text-lg">tenryu.com.br</p>
                   <p className="text-sm text-muted-foreground">Site institucional</p>
                 </div>
               </div>
               
-              <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-primary" />
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <MapPin className="w-6 h-6 text-primary" />
+                </div>
                 <div>
-                  <p className="font-medium text-foreground">São Paulo, SP</p>
+                  <p className="font-medium text-foreground text-lg">São Paulo, SP</p>
                   <p className="text-sm text-muted-foreground">Atendimento nacional</p>
                 </div>
               </div>
