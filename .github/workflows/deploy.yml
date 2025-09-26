@@ -11,5 +11,5 @@ jobs:
     steps:
       - name: Trigger EasyPanel Deploy
         run: |
-          curl -X POST "http://3.22.177.77:3000/api/deploy/9a523d29c85f9856196297cfba11939ac06722a408dafc86"
+          curl -X POST "https://hook.csvoa5.easypanel.host/api/deploy/9a523d29c85f9856196297cfba11939ac06722a408dafc86"
 
