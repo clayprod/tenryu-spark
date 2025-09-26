@@ -33,7 +33,7 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="mb-6">
-                <h3 className="text-xl font-bold font-pieces mb-2">tenryu</h3>
+                <h3 className="text-2xl font-bold font-pieces mb-2">tenryu</h3>
                 <p className="text-white text-lg">CONSULTING</p>
               </div>
               
