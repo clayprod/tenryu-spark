@@ -1,4 +1,5 @@
 import elgLogo from "@/assets/clients/elg.png";
+import fagundezLogo from "@/assets/clients/fagundez.png";
 import fiberxLogo from "@/assets/clients/fiberx.png";
 import grupomultiLogo from "@/assets/clients/grupomulti.png";
 import huskyLogo from "@/assets/clients/husky.png";
@@ -15,14 +16,9 @@ const Clientes = () => {
       logo: elgLogo
     },
     {
-      name: "Husky Gaming",
-      website: "https://huskygaming.com.br",
-      logo: huskyLogo
-    },
-    {
-      name: "Waaw",
-      website: "https://waaw.com.br",
-      logo: waawLogo
+      name: "Fagundez",
+      website: "https://fagundez.com.br",
+      logo: fagundezLogo
     },
     {
       name: "FiberX",
@@ -30,14 +26,14 @@ const Clientes = () => {
       logo: fiberxLogo
     },
     {
-      name: "Wap",
-      website: "https://wap.ind.br",
-      logo: wapLogo
+      name: "Grupo Multi",
+      website: "https://multilaser.com.br",
+      logo: grupomultiLogo
     },
     {
-      name: "Velds",
-      website: "https://velds.com.br",
-      logo: veldsLogo
+      name: "Husky Gaming",
+      website: "https://huskygaming.com.br",
+      logo: huskyLogo
     },
     {
       name: "KaBuM!",
@@ -45,9 +41,19 @@ const Clientes = () => {
       logo: kabumLogo
     },
     {
-      name: "Grupo Multi",
-      website: "https://multilaser.com.br",
-      logo: grupomultiLogo
+      name: "Velds",
+      website: "https://velds.com.br",
+      logo: veldsLogo
+    },
+    {
+      name: "Waaw",
+      website: "https://waaw.com.br",
+      logo: waawLogo
+    },
+    {
+      name: "Wap",
+      website: "https://wap.ind.br",
+      logo: wapLogo
     }
   ];
 
@@ -67,7 +73,7 @@ const Clientes = () => {
 
         {/* Clients Grid */}
         <div className="mb-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
             {clients.map((client, index) => (
               <a 
                 key={index} 
