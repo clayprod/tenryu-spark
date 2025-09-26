@@ -22,9 +22,9 @@ const Hero = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:50px_50px]"></div>
       </div>
       
-      <div className="container-tenryu relative z-10">
+      <div className="container-tenryu relative z-10 pt-8">
         <div className="max-w-4xl mx-auto text-center text-white">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-exo">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-exo">
             <span className="block sm:inline">Transformamos</span>{" "}
             <span className="bg-gradient-orange bg-clip-text text-transparent">Visões</span>{" "}
             <span className="block sm:inline">em</span>{" "}
