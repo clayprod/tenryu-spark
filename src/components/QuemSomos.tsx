@@ -10,7 +10,7 @@ const QuemSomos = () => {
             Quem <span className="text-primary">Somos</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            A <strong className="text-foreground font-pieces">Tenryu Consulting</strong> é uma empresa especializada em apoiar empresas que buscam 
+            A <strong className="text-foreground font-pieces">tenryu</strong> é uma consultoria especializada em apoiar empresas que buscam 
             expertise e uma <strong className="text-foreground">visão holística</strong> no desenvolvimento de novos produtos e negócios, 
             além da <strong className="text-foreground">redução de riscos e custos</strong> na gestão de capital humano especializado, 
             otimizando OPEX por meio de soluções validadas em casos reais de sucesso.

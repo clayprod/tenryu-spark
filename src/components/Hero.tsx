@@ -30,7 +30,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">
-            Consultoria especializada em desenvolvimento de negócios e importação. 
+            Consultoria especializada em desenvolvimento de produtos, negócios e importação. 
             <strong className="text-white"> Redução de riscos e custos</strong> com expertise internacional 
             e <strong className="text-white">visão holística</strong> para seu sucesso.
           </p>
