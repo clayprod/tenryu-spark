@@ -43,9 +43,11 @@ const Contato = () => {
     try {
       // Configurações do EmailJS para Umbler
       const serviceID = 'tenryu-app-mail'; // Seu Service ID
-      const templateID = 'template_hl2gm4g'; // Seu Template ID
+      const templateID = 'template_hl2gm4g'; // Template para Clayton
+      const confirmationTemplateID = 'template_confirmation'; // Template de confirmação para o usuário
       const userID = 'ZrftApoiQ6NDmVqNB'; // Sua Public Key
 
+      // Parâmetros para e-mail para Clayton
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
@@ -55,7 +57,21 @@ const Contato = () => {
         subject: `Contato Tenryu - ${formData.name}${formData.company ? ` (${formData.company})` : ''}`
       };
 
+      // Parâmetros para e-mail de confirmação para o usuário
+      const confirmationParams = {
+        to_name: formData.name,
+        to_email: formData.email,
+        company_name: formData.company || 'Não informado',
+        message: formData.message,
+        from_email: 'clayton@tenryu.com.br',
+        subject: 'Confirmação de Contato - Tenryu Consulting'
+      };
+
+      // Enviar e-mail para Clayton
       await emailjs.send(serviceID, templateID, templateParams, userID);
+      
+      // Enviar e-mail de confirmação para o usuário
+      await emailjs.send(serviceID, confirmationTemplateID, confirmationParams, userID);
       
       setShowSuccessPopup(true);
       setFormData({ name: "", email: "", company: "", message: "" });
@@ -339,7 +355,7 @@ const Contato = () => {
                 </h3>
                 
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Obrigado pelo seu contato! Responderemos em até <strong className="text-foreground">1 dia útil</strong>.
+                  Obrigado pelo seu contato! Você receberá um e-mail de confirmação e responderemos em até <strong className="text-foreground">1 dia útil</strong>.
                 </p>
                 
                 <button
