@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Phone, Mail, Globe, MapPin, Send, CheckCircle, X } from "lucide-react";
+import { Phone, Mail, Globe, MapPin, Send, CheckCircle, X, Instagram } from "lucide-react";
 
 const Contato = () => {
   const [formData, setFormData] = useState({
@@ -180,6 +180,23 @@ const Contato = () => {
                     (11) 94190-1424
                   </a>
                   <p className="text-sm text-muted-foreground">Clique para ir ao WhatsApp</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <Instagram className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <a 
+                    href="https://instagram.com/tenryucombr" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="font-medium text-foreground text-lg hover:text-primary transition-colors cursor-pointer"
+                  >
+                    @tenryucombr
+                  </a>
+                  <p className="text-sm text-muted-foreground">Siga-nos no Instagram</p>
                 </div>
               </div>
               
