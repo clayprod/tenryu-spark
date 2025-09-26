@@ -173,7 +173,7 @@ const Contato = () => {
                   >
                     (11) 94190-1424
                   </a>
-                  <p className="text-sm text-muted-foreground">WhatsApp disponível</p>
+                  <p className="text-sm text-muted-foreground">Clique para ir ao WhatsApp</p>
                 </div>
               </div>
               
