@@ -28,10 +28,10 @@ Estilo: corporativo minimalista
     --popover: 0 0% 100%;
     --popover-foreground: 220 13% 18%;
 
-    /* Tenryu Orange - cor principal (similar ao logo) */
-    --primary: 25 95% 53%;
+    /* Tenryu Orange - cor principal #da2f0a */
+    --primary: 8 85% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 25 95% 48%;
+    --primary-hover: 8 85% 40%;
     
     /* Cinzas neutros */
     --secondary: 220 14% 96%;
@@ -46,7 +46,7 @@ Estilo: corporativo minimalista
     /* Elementos de interface */
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 25 95% 53%;
+    --ring: 8 85% 45%;
     --radius: 0.75rem;
     
     /* Cores de feedback */
@@ -81,9 +81,9 @@ Estilo: corporativo minimalista
     --popover: 220 13% 12%;
     --popover-foreground: 220 14% 96%;
 
-    --primary: 25 95% 58%;
+    --primary: 8 85% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 25 95% 53%;
+    --primary-hover: 8 85% 45%;
     
     --secondary: 220 13% 18%;
     --secondary-foreground: 220 14% 96%;
@@ -96,7 +96,7 @@ Estilo: corporativo minimalista
     
     --border: 220 13% 18%;
     --input: 220 13% 18%;
-    --ring: 25 95% 58%;
+    --ring: 8 85% 50%;
     
     --gradient-hero: linear-gradient(135deg, hsl(220 13% 12%) 0%, hsl(220 13% 21%) 100%);
     --shadow-card: 0 4px 6px -1px hsl(0 0% 0% / 0.25), 0 2px 4px -2px hsl(0 0% 0% / 0.15);
