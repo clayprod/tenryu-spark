@@ -17,7 +17,7 @@ const Clientes = () => {
     },
     {
       name: "Fagundez",
-      website: "https://fagundez.com.br",
+      website: "https://fagundez.com",
       logo: fagundezLogo
     },
     {
