@@ -44,7 +44,7 @@ const Contato = () => {
       // Configurações do EmailJS para Umbler
       const serviceID = 'tenryu-app-mail'; // Seu Service ID
       const templateID = 'template_hl2gm4g'; // Template para Clayton
-      const confirmationTemplateID = 'template_confirmation'; // Template de confirmação para o usuário
+      const confirmationTemplateID = 'template_y5h5ikw'; // Template de confirmação para o usuário
       const userID = 'ZrftApoiQ6NDmVqNB'; // Sua Public Key
 
       // Parâmetros para e-mail para Clayton
