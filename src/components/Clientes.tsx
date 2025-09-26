@@ -80,18 +80,15 @@ const Clientes = () => {
                 href={client.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col items-center justify-center p-6 bg-white rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 border border-gray-100"
+                className="group flex items-center justify-center p-8 bg-white rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 border border-gray-100"
               >
-                <div className="w-20 h-20 flex items-center justify-center mb-3">
+                <div className="w-28 h-28 flex items-center justify-center">
                   <img 
                     src={client.logo} 
                     alt={`${client.name} logo`}
                     className="max-w-full max-h-full object-contain"
                   />
                 </div>
-                <span className="text-sm font-medium text-gray-600 group-hover:text-primary transition-colors">
-                  {client.name}
-                </span>
               </a>
             ))}
           </div>
