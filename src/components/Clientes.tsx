@@ -66,7 +66,7 @@ const Clientes = () => {
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Parcerias estratégicas que geram resultados reais. Conheça algumas empresas que 
-            confiam na nossa expertise para seus projetos de desenvolvimento de negócios.
+            já confiaram na nossa expertise para seus projetos de desenvolvimento de negócios.
           </p>
         </div>
 
