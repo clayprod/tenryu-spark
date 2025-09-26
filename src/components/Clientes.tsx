@@ -97,7 +97,7 @@ const Clientes = () => {
               ) : (
                 <div 
                   key={index} 
-                  className="flex items-center justify-center p-8 bg-white rounded-xl border border-gray-100"
+                  className="group flex items-center justify-center p-8 bg-white rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 border border-gray-100"
                 >
                   {content}
                 </div>
