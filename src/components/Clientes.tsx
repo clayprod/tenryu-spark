@@ -32,7 +32,6 @@ const Clientes = () => {
     },
     {
       name: "Husky Gaming",
-      website: "https://huskygaming.com.br",
       logo: huskyLogo
     },
     {
@@ -74,14 +73,8 @@ const Clientes = () => {
         {/* Clients Grid */}
         <div className="mb-20">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
-            {clients.map((client, index) => (
-              <a 
-                key={index} 
-                href={client.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-center p-8 bg-white rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 border border-gray-100"
-              >
+            {clients.map((client, index) => {
+              const content = (
                 <div className="w-28 h-28 flex items-center justify-center">
                   <img 
                     src={client.logo} 
@@ -89,8 +82,27 @@ const Clientes = () => {
                     className="max-w-full max-h-full object-contain"
                   />
                 </div>
-              </a>
-            ))}
+              );
+
+              return client.website ? (
+                <a 
+                  key={index} 
+                  href={client.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-center p-8 bg-white rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 border border-gray-100"
+                >
+                  {content}
+                </a>
+              ) : (
+                <div 
+                  key={index} 
+                  className="flex items-center justify-center p-8 bg-white rounded-xl border border-gray-100"
+                >
+                  {content}
+                </div>
+              );
+            })}
           </div>
         </div>
 
