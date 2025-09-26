@@ -68,9 +68,11 @@ const Contato = () => {
       };
 
       // Enviar e-mail para Clayton
+      console.log('Enviando e-mail para Clayton:', templateParams);
       await emailjs.send(serviceID, templateID, templateParams, userID);
       
       // Enviar e-mail de confirmação para o usuário
+      console.log('Enviando e-mail de confirmação:', confirmationParams);
       await emailjs.send(serviceID, confirmationTemplateID, confirmationParams, userID);
       
       setShowSuccessPopup(true);
