@@ -53,7 +53,7 @@ const Servicos = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground font-exo">
-            Serviços & <span className="text-primary">Custos</span>
+            <span className="bg-gradient-orange bg-clip-text text-transparent">Serviços</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Soluções completas e personalizadas para cada etapa do seu negócio. 
