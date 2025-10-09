@@ -7,6 +7,9 @@ const Contato = () => {
     name: "",
     email: "", 
     company: "",
+    employees: "",
+    industry: "",
+    salesChannel: "",
     message: ""
   });
 
@@ -41,6 +44,8 @@ const Contato = () => {
     setIsLoading(true);
 
     try {
+      // Monta a mensagem com os campos adicionais em linhas separadas
+      const composedMessage = `${formData.message}\n\n---\nInformações adicionais:\n- Número de funcionários: ${formData.employees || 'Não informado'}\n- Ramo de atuação: ${formData.industry || 'Não informado'}\n- Canal de vendas: ${formData.salesChannel || 'Não informado'}`;
       // Configurações do EmailJS para Umbler
       const serviceID = 'tenryu-app-mail'; // Seu Service ID
       const templateID = 'template_hl2gm4g'; // Template para Clayton
@@ -52,7 +57,7 @@ const Contato = () => {
         from_name: formData.name,
         from_email: formData.email,
         company_name: formData.company || 'Não informado',
-        message: formData.message,
+        message: composedMessage,
         to_email: 'clayton@tenryu.com.br',
         subject: `Contato Tenryu - ${formData.name}${formData.company ? ` (${formData.company})` : ''}`
       };
@@ -62,7 +67,7 @@ const Contato = () => {
         to_name: formData.name,
         to_email: formData.email,
         company_name: formData.company || 'Não informado',
-        message: formData.message,
+        message: composedMessage,
         from_email: 'clayton@tenryu.com.br',
         subject: 'Confirmação de Contato - Tenryu Consulting'
       };
@@ -76,7 +81,7 @@ const Contato = () => {
       await emailjs.send(serviceID, confirmationTemplateID, confirmationParams, userID);
       
       setShowSuccessPopup(true);
-      setFormData({ name: "", email: "", company: "", message: "" });
+      setFormData({ name: "", email: "", company: "", employees: "", industry: "", salesChannel: "", message: "" });
       
       // Auto-hide popup after 5 seconds
       setTimeout(() => {
@@ -177,6 +182,63 @@ const Contato = () => {
                   className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-background text-foreground"
                   placeholder="Nome da sua empresa"
                 />
+              </div>
+
+              {/* Campos adicionais para facilitar o filtro posterior */}
+              <div>
+                <label htmlFor="employees" className="block text-sm font-medium text-foreground mb-2">
+                  Número de Funcionários
+                </label>
+                <select
+                  id="employees"
+                  name="employees"
+                  value={formData.employees}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-background text-foreground"
+                >
+                  <option value="">Selecione...</option>
+                  <option value="1-10">1-10</option>
+                  <option value="11-50">11-50</option>
+                  <option value="51-200">51-200</option>
+                  <option value=">200">200+</option>
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="industry" className="block text-sm font-medium text-foreground mb-2">
+                  Ramo de Atuação
+                </label>
+                <input
+                  type="text"
+                  id="industry"
+                  name="industry"
+                  value={formData.industry}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-background text-foreground"
+                  placeholder="Ex.: Alimentos e Bebidas, Cosméticos, Casa & Construção"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="salesChannel" className="block text-sm font-medium text-foreground mb-2">
+                  Canal de Vendas
+                </label>
+                <select
+                  id="salesChannel"
+                  name="salesChannel"
+                  value={formData.salesChannel}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-background text-foreground"
+                >
+                  <option value="">Selecione...</option>
+                  <option value="Distribuidor">Distribuidor</option>
+                  <option value="Revenda">Revenda</option>
+                  <option value="Indústria">Indústria</option>
+                  <option value="E-commerce">E-commerce</option>
+                  <option value="Varejo">Varejo</option>
+                  <option value="Atacado">Atacado</option>
+                  <option value="Outro">Outro</option>
+                </select>
               </div>
               
               <div>
