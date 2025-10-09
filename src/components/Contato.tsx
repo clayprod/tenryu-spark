@@ -2,6 +2,73 @@ import { useState, useEffect } from "react";
 import { Phone, Mail, Globe, MapPin, Send, CheckCircle, X, Instagram } from "lucide-react";
 import emailjs from '@emailjs/browser';
 
+// Locale-aware collator for sorting Portuguese strings
+const localeCollator = new Intl.Collator('pt-BR', { sensitivity: 'base', ignorePunctuation: true });
+
+// Base options for industry (ramo de atuação)
+const INDUSTRY_BASE_OPTIONS = [
+  "Agronegócio",
+  "Alimentos e Bebidas",
+  "Automotivo",
+  "Beleza e Cosméticos",
+  "Casa e Construção",
+  "Materiais de Construção",
+  "Ferramentas",
+  "Móveis e Decoração",
+  "Utilidades Domésticas",
+  "Limpeza",
+  "Higiene Pessoal",
+  "Saúde",
+  "Farmacêutico",
+  "Equipamentos Médicos e Hospitalares",
+  "Químico",
+  "Pet",
+  "Papelaria e Escritório",
+  "Brinquedos",
+  "Esportes e Lazer",
+  "Moda e Vestuário",
+  "Calçados",
+  "Acessórios",
+  "Joias e Óptica",
+  "Eletrônicos e Informática",
+  "Eletrodomésticos",
+  "Telefonia e Acessórios",
+  "Energia e Iluminação",
+  "Segurança e CFTV",
+  "Automação e Eletrônica",
+  "Logística e Transporte",
+  "Educação",
+  "Financeiro",
+  "Imobiliário",
+  "Hotelaria e Turismo",
+  "Restaurantes e Food Service",
+  "Bares e Bebidas",
+  "Mercado Público / Governo",
+  "ONG / Terceiro Setor",
+  "Mineração e Siderurgia",
+  "Papel e Celulose",
+  "Plásticos e Embalagens",
+  "Têxtil",
+  "Agroindústria",
+  "Tecnologia e Software",
+  "Serviços Profissionais",
+];
+
+const INDUSTRY_OTHER_OPTION = "Outro, especifique";
+
+// Sorted lists computed once at module load
+const SORTED_INDUSTRY_OPTIONS = [...INDUSTRY_BASE_OPTIONS].sort(localeCollator.compare);
+
+const SALES_CHANNEL_BASE_OPTIONS = [
+  "Distribuidor / Atacado",
+  "Revenda / Varejo",
+  "Indústria",
+  "E-commerce",
+  "Serviços",
+];
+
+const SORTED_SALES_CHANNEL_OPTIONS = [...SALES_CHANNEL_BASE_OPTIONS].sort(localeCollator.compare);
+
 const Contato = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -221,52 +288,12 @@ const Contato = () => {
                   className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-background text-foreground"
                 >
                   <option value="">Selecione...</option>
-                  <option value="Agronegócio">Agronegócio</option>
-                  <option value="Alimentos e Bebidas">Alimentos e Bebidas</option>
-                  <option value="Automotivo">Automotivo</option>
-                  <option value="Beleza e Cosméticos">Beleza e Cosméticos</option>
-                  <option value="Casa e Construção">Casa e Construção</option>
-                  <option value="Materiais de Construção">Materiais de Construção</option>
-                  <option value="Ferramentas">Ferramentas</option>
-                  <option value="Móveis e Decoração">Móveis e Decoração</option>
-                  <option value="Utilidades Domésticas">Utilidades Domésticas</option>
-                  <option value="Limpeza">Limpeza</option>
-                  <option value="Higiene Pessoal">Higiene Pessoal</option>
-                  <option value="Saúde">Saúde</option>
-                  <option value="Farmacêutico">Farmacêutico</option>
-                  <option value="Equipamentos Médicos e Hospitalares">Equipamentos Médicos e Hospitalares</option>
-                  <option value="Químico">Químico</option>
-                  <option value="Pet">Pet</option>
-                  <option value="Papelaria e Escritório">Papelaria e Escritório</option>
-                  <option value="Brinquedos">Brinquedos</option>
-                  <option value="Esportes e Lazer">Esportes e Lazer</option>
-                  <option value="Moda e Vestuário">Moda e Vestuário</option>
-                  <option value="Calçados">Calçados</option>
-                  <option value="Acessórios">Acessórios</option>
-                  <option value="Joias e Óptica">Joias e Óptica</option>
-                  <option value="Eletrônicos e Informática">Eletrônicos e Informática</option>
-                  <option value="Eletrodomésticos">Eletrodomésticos</option>
-                  <option value="Telefonia e Acessórios">Telefonia e Acessórios</option>
-                  <option value="Energia e Iluminação">Energia e Iluminação</option>
-                  <option value="Segurança e CFTV">Segurança e CFTV</option>
-                  <option value="Automação e Eletrônica">Automação e Eletrônica</option>
-                  <option value="Logística e Transporte">Logística e Transporte</option>
-                  <option value="Educação">Educação</option>
-                  <option value="Financeiro">Financeiro</option>
-                  <option value="Imobiliário">Imobiliário</option>
-                  <option value="Hotelaria e Turismo">Hotelaria e Turismo</option>
-                  <option value="Restaurantes e Food Service">Restaurantes e Food Service</option>
-                  <option value="Bares e Bebidas">Bares e Bebidas</option>
-                  <option value="Mercado Público / Governo">Mercado Público / Governo</option>
-                  <option value="ONG / Terceiro Setor">ONG / Terceiro Setor</option>
-                  <option value="Mineração e Siderurgia">Mineração e Siderurgia</option>
-                  <option value="Papel e Celulose">Papel e Celulose</option>
-                  <option value="Plásticos e Embalagens">Plásticos e Embalagens</option>
-                  <option value="Têxtil">Têxtil</option>
-                  <option value="Agroindústria">Agroindústria</option>
-                  <option value="Tecnologia e Software">Tecnologia e Software</option>
-                  <option value="Serviços Profissionais">Serviços Profissionais</option>
-                  <option value="Outro, especifique">Outro, especifique</option>
+                  {SORTED_INDUSTRY_OPTIONS.map((label) => (
+                    <option key={label} value={label}>
+                      {label}
+                    </option>
+                  ))}
+                  <option value={INDUSTRY_OTHER_OPTION}>{INDUSTRY_OTHER_OPTION}</option>
                 </select>
                 {formData.industry === 'Outro, especifique' && (
                   <div className="mt-3">
@@ -298,11 +325,11 @@ const Contato = () => {
                   className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-background text-foreground"
                 >
                   <option value="">Selecione...</option>
-                  <option value="Distribuidor / Atacado">Distribuidor / Atacado</option>
-                  <option value="Revenda / Varejo">Revenda / Varejo</option>
-                  <option value="Indústria">Indústria</option>
-                  <option value="E-commerce">E-commerce</option>
-                  <option value="Serviços">Serviços</option>
+                  {SORTED_SALES_CHANNEL_OPTIONS.map((label) => (
+                    <option key={label} value={label}>
+                      {label}
+                    </option>
+                  ))}
                 </select>
               </div>
               
