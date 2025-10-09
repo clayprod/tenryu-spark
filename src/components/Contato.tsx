@@ -9,6 +9,7 @@ const Contato = () => {
     company: "",
     employees: "",
     industry: "",
+    industryOther: "",
     salesChannel: "",
     message: ""
   });
@@ -45,7 +46,11 @@ const Contato = () => {
 
     try {
       // Monta a mensagem com os campos adicionais em linhas separadas
-      const composedMessage = `${formData.message}\n\n---\nInformações adicionais:\n- Número de funcionários: ${formData.employees || 'Não informado'}\n- Ramo de atuação: ${formData.industry || 'Não informado'}\n- Canal de vendas: ${formData.salesChannel || 'Não informado'}`;
+      const industryValue =
+        formData.industry === 'Outro, especifique'
+          ? (formData.industryOther ? `Outro: ${formData.industryOther}` : 'Outro (não especificado)')
+          : (formData.industry || 'Não informado');
+      const composedMessage = `${formData.message}\n\n---\nInformações adicionais:\n- Número de funcionários: ${formData.employees || 'Não informado'}\n- Ramo de atuação: ${industryValue}\n- Canal de vendas: ${formData.salesChannel || 'Não informado'}`;
       // Configurações do EmailJS para Umbler
       const serviceID = 'tenryu-app-mail'; // Seu Service ID
       const templateID = 'template_hl2gm4g'; // Template para Clayton
@@ -81,7 +86,7 @@ const Contato = () => {
       await emailjs.send(serviceID, confirmationTemplateID, confirmationParams, userID);
       
       setShowSuccessPopup(true);
-      setFormData({ name: "", email: "", company: "", employees: "", industry: "", salesChannel: "", message: "" });
+      setFormData({ name: "", email: "", company: "", employees: "", industry: "", industryOther: "", salesChannel: "", message: "" });
       
       // Auto-hide popup after 5 seconds
       setTimeout(() => {
@@ -101,7 +106,7 @@ const Contato = () => {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -208,15 +213,77 @@ const Contato = () => {
                 <label htmlFor="industry" className="block text-sm font-medium text-foreground mb-2">
                   Ramo de Atuação
                 </label>
-                <input
-                  type="text"
+                <select
                   id="industry"
                   name="industry"
                   value={formData.industry}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-background text-foreground"
-                  placeholder="Ex.: Alimentos e Bebidas, Cosméticos, Casa & Construção"
-                />
+                >
+                  <option value="">Selecione...</option>
+                  <option value="Agronegócio">Agronegócio</option>
+                  <option value="Alimentos e Bebidas">Alimentos e Bebidas</option>
+                  <option value="Automotivo">Automotivo</option>
+                  <option value="Beleza e Cosméticos">Beleza e Cosméticos</option>
+                  <option value="Casa e Construção">Casa e Construção</option>
+                  <option value="Materiais de Construção">Materiais de Construção</option>
+                  <option value="Ferramentas">Ferramentas</option>
+                  <option value="Móveis e Decoração">Móveis e Decoração</option>
+                  <option value="Utilidades Domésticas">Utilidades Domésticas</option>
+                  <option value="Limpeza">Limpeza</option>
+                  <option value="Higiene Pessoal">Higiene Pessoal</option>
+                  <option value="Saúde">Saúde</option>
+                  <option value="Farmacêutico">Farmacêutico</option>
+                  <option value="Equipamentos Médicos e Hospitalares">Equipamentos Médicos e Hospitalares</option>
+                  <option value="Químico">Químico</option>
+                  <option value="Pet">Pet</option>
+                  <option value="Papelaria e Escritório">Papelaria e Escritório</option>
+                  <option value="Brinquedos">Brinquedos</option>
+                  <option value="Esportes e Lazer">Esportes e Lazer</option>
+                  <option value="Moda e Vestuário">Moda e Vestuário</option>
+                  <option value="Calçados">Calçados</option>
+                  <option value="Acessórios">Acessórios</option>
+                  <option value="Joias e Óptica">Joias e Óptica</option>
+                  <option value="Eletrônicos e Informática">Eletrônicos e Informática</option>
+                  <option value="Eletrodomésticos">Eletrodomésticos</option>
+                  <option value="Telefonia e Acessórios">Telefonia e Acessórios</option>
+                  <option value="Energia e Iluminação">Energia e Iluminação</option>
+                  <option value="Segurança e CFTV">Segurança e CFTV</option>
+                  <option value="Automação e Eletrônica">Automação e Eletrônica</option>
+                  <option value="Logística e Transporte">Logística e Transporte</option>
+                  <option value="Educação">Educação</option>
+                  <option value="Financeiro">Financeiro</option>
+                  <option value="Imobiliário">Imobiliário</option>
+                  <option value="Hotelaria e Turismo">Hotelaria e Turismo</option>
+                  <option value="Restaurantes e Food Service">Restaurantes e Food Service</option>
+                  <option value="Bares e Bebidas">Bares e Bebidas</option>
+                  <option value="Mercado Público / Governo">Mercado Público / Governo</option>
+                  <option value="ONG / Terceiro Setor">ONG / Terceiro Setor</option>
+                  <option value="Mineração e Siderurgia">Mineração e Siderurgia</option>
+                  <option value="Papel e Celulose">Papel e Celulose</option>
+                  <option value="Plásticos e Embalagens">Plásticos e Embalagens</option>
+                  <option value="Têxtil">Têxtil</option>
+                  <option value="Agroindústria">Agroindústria</option>
+                  <option value="Tecnologia e Software">Tecnologia e Software</option>
+                  <option value="Serviços Profissionais">Serviços Profissionais</option>
+                  <option value="Outro, especifique">Outro, especifique</option>
+                </select>
+                {formData.industry === 'Outro, especifique' && (
+                  <div className="mt-3">
+                    <label htmlFor="industryOther" className="block text-sm font-medium text-foreground mb-2">
+                      Especifique o ramo
+                    </label>
+                    <input
+                      type="text"
+                      id="industryOther"
+                      name="industryOther"
+                      value={formData.industryOther}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-background text-foreground"
+                      placeholder="Ex.: Cosméticos naturais, Energia solar, etc."
+                    />
+                  </div>
+                )}
               </div>
 
               <div>
@@ -231,13 +298,11 @@ const Contato = () => {
                   className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-background text-foreground"
                 >
                   <option value="">Selecione...</option>
-                  <option value="Distribuidor">Distribuidor</option>
-                  <option value="Revenda">Revenda</option>
+                  <option value="Distribuidor / Atacado">Distribuidor / Atacado</option>
+                  <option value="Revenda / Varejo">Revenda / Varejo</option>
                   <option value="Indústria">Indústria</option>
                   <option value="E-commerce">E-commerce</option>
-                  <option value="Varejo">Varejo</option>
-                  <option value="Atacado">Atacado</option>
-                  <option value="Outro">Outro</option>
+                  <option value="Serviços">Serviços</option>
                 </select>
               </div>
               
