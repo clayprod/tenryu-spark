@@ -1,5 +1,7 @@
 import { ExternalLink, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { SEOHead } from "@/components/SEO/SEOHead";
+import { Breadcrumbs } from "@/components/SEO/Breadcrumbs";
 
 const Creditos = () => {
   const credits = [
@@ -22,6 +24,13 @@ const Creditos = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Créditos de Design - Tenryu Consulting"
+        description="Reconhecimento aos criadores e plataformas que contribuíram para a criação visual do website Tenryu Consulting. Slidesgo, Flaticon e Freepik."
+        keywords="créditos, design, slidesgo, flaticon, freepik, recursos visuais"
+        canonical="https://tenryu.com.br/creditos"
+      />
+      <Breadcrumbs />
       {/* Header */}
       <div className="bg-gradient-hero text-white py-16">
         <div className="container-tenryu">

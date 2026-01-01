@@ -23,10 +23,30 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
     
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=Roboto+Condensed:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Resource Hints - Otimização Core Web Vitals -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="/fonts/Pieces_of_Eight.ttf" as="font" type="font/ttf" crossorigin />
+    
+    <!-- CSS Crítico Inline - Above the fold (Hero Section + Header) -->
+    <style>
+      /* Critical CSS - Header and Hero Section */
+      body{margin:0;font-family:'Roboto Condensed',sans-serif;background:#fafafa;color:#2c3e50}
+      #root{min-height:100vh}
+      .container-tenryu{max-width:1280px;margin:0 auto;padding:0 1rem}
+      @media(min-width:640px){.container-tenryu{padding:0 1.5rem}}
+      @media(min-width:1024px){.container-tenryu{padding:0 2rem}}
+      h1,h2,h3{font-family:'Exo 2',sans-serif;font-weight:700;margin:0}
+      .font-pieces{font-family:'Pieces of Eight',serif}
+    </style>
+    
+    <!-- Fonts - Carregado após critical CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=Roboto+Condensed:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=Roboto+Condensed:wght@300;400;500&display=swap" rel="stylesheet" /></noscript>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -118,6 +138,18 @@
   </head>
 
   <body>
+    <!-- Navegação HTML para SEO - visível no código fonte para crawlers -->
+    <nav id="seo-navigation" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;" aria-label="Navegação principal">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#sobre">Sobre</a></li>
+        <li><a href="/#servicos">Serviços</a></li>
+        <li><a href="/#clientes">Clientes</a></li>
+        <li><a href="/#contato">Contato</a></li>
+        <li><a href="/creditos">Créditos</a></li>
+      </ul>
+    </nav>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
